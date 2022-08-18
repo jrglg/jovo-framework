@@ -23,7 +23,7 @@ Jovo also has an error class called [`JovoError`](#jovoerror) which can be used 
 import { Jovo } from '@jovotech/framework';
 // ...
 
-app.onError((error: Error, jovo: Jovo) => {
+app.onError((error: Error, jovo?: Jovo) => {
   // ...
 });
 ```
@@ -40,7 +40,7 @@ The `jovo` parameter is `undefined` if the error is thrown outside a handler (fo
 The function that is passed to `onError()` can also be asynchronous:
 
 ```typescript
-app.onError(async (error: Error, jovo: Jovo) => {
+app.onError(async (error: Error, jovo?: Jovo) => {
   // ...
 });
 ```
@@ -48,10 +48,10 @@ app.onError(async (error: Error, jovo: Jovo) => {
 You can also use `onError()` multiple times:
 
 ```typescript
-app.onError((error: Error, jovo: Jovo) => {
+app.onError((error: Error, jovo?: Jovo) => {
   /* ... */
 });
-app.onError((error: Error, jovo: Jovo) => {
+app.onError((error: Error, jovo?: Jovo) => {
   /* ... */
 });
 ```
